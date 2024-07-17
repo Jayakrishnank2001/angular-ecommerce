@@ -22,10 +22,10 @@ export class NavbarComponent implements OnInit {
     })
   }
 
-  onSearch(event: any): void {
+  onSearch(event: Event): void {
     event.preventDefault();
-    if (this.searchQuery.length > 0) {
-      this._router.navigate(['/'], { queryParams: { search: this.searchQuery } });
+    if (this.searchQuery.trim().length > 0) {
+      this._router.navigate(['/products'], { queryParams: { search: this.searchQuery } });
     }
   }
 }

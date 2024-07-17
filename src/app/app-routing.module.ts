@@ -6,6 +6,7 @@ import { ProductComponent } from './components/product/product.component';
 import { CartComponent } from './components/cart/cart.component';
 import { ProfileComponent } from './components/profile/profile.component';
 import { NavbarComponent } from './components/navbar/navbar.component';
+import { PageNotFoundComponent } from './components/page-not-found/page-not-found.component';
 
 const routes: Routes = [
   {
@@ -32,6 +33,11 @@ const routes: Routes = [
     path: 'profile',
     title: 'Profile',
     component: ProfileComponent
+  },
+  {
+    path: '**',
+    title: 'Page Not Found',
+    component:PageNotFoundComponent
   }
 ];
 

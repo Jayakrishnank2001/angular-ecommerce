@@ -34,7 +34,15 @@ export class CartComponent implements OnInit{
   }
 
   getTotalPrice(): number {
-    return this.cartItems.reduce((total, item) => total + item.price, 0);
+    return this.cartItems.reduce((total, item) => total + (item.price * item.quantity), 0);
+  }
+
+  increaseQuantity(product: Product): void {
+    this._cartService.increaseQuantity(product);
+  }
+
+  decreaseQuantity(product: Product): void {
+    this._cartService.decreaseQuantity(product);
   }
 
   placeOrder():void {
@@ -49,5 +57,9 @@ export class CartComponent implements OnInit{
         this._router.navigate(['/'])
       }
     })
+  }
+
+  viewProduct(productId: number | undefined): void {
+    this._router.navigate(['/product'], { queryParams: { productId: productId } })
   }
 }

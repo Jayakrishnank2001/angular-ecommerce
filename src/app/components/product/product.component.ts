@@ -35,10 +35,18 @@ export class ProductComponent implements OnInit {
   }
 
   addToCart(product: Product) {
-    this._cartService.addToCart(product);
-    this._snackBar.open('Product added to cart', 'Close', {
-      duration: 5000,
-      verticalPosition: 'top'
+    this._cartService.addToCart(product).subscribe((data) => {
+      if (data === true) {
+        this._snackBar.open('Product added to cart', 'Close', {
+          duration: 5000,
+          verticalPosition: 'top'
+        })
+      } else {
+        this._snackBar.open('Product already in cart', 'Close', {
+          duration: 5000,
+          verticalPosition: 'top'
+        })
+      }
     })
   }
 
