@@ -1,0 +1,20 @@
+<div class="container-fluid px-0 overflow-hidden">
+    <div class="row g-0">
+      <div class="col-12">
+        <img src="assets/homepage-image.jpg" class="img-fluid" alt="Banner Image">
+      </div>
+    </div>
+  
+    <div class="row mt-4">
+      <div class="col-12">
+        <h2 class="categories-heading">Categories</h2>
+        <div class="categories-list">
+            <div class="category-item" *ngFor="let category of categories" (click)="onCategoryClick(category.name)">
+                <img [src]="category.imageUrl" alt="{{ category.name }}" class="category-image">
+                <div class="category-name">{{ category.name }}</div>
+            </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  

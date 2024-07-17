@@ -1,0 +1,26 @@
+.product-image {
+    height: 100%;
+    object-fit: cover;
+  }
+  
+  .details-card {
+    height: 100%;
+  }
+  
+  .card {
+    border: none; /* Remove default card border */
+  }
+  
+  .card-title {
+    font-size: 1.25rem;
+    font-weight: bold;
+  }
+  
+  .card-text {
+    margin-bottom: 0.5rem;
+  }
+  
+  .btn-primary {
+    margin-top: 1rem;
+  }
+  
