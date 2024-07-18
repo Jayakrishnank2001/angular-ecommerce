@@ -63,7 +63,7 @@ export class CartService {
     this.cartSubject.next([]);
   }
 
-  private updateCart(): void {
+  updateCart(): void {
     this.cartSubject.next([...this.cartItems]);
   }
 }
